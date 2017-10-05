@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  h1 Send a Command to Farmbot
+  div
+    form(name="SendCommand", method="post", action="")
+      input#inputButton(type="text" placeholder="Input Number" name="absPosition" style="margin-top:2%; margin-left:20px; height: 40px; font-size:110%; width:480px;")
+      <br>
+      button#btnSubmit(type="submit" name="absoluteMoveX" style="margin-top:2%; margin-left:20px;") Absolute Move X-Axis
+      button#btnSubmit(type="submit" name="absoluteMoveY" style="margin-top:2%; margin-left:40px;") Absolute Move Y-Axis
+      button#btnSubmit(type="submit" name="absoluteMoveZ" style="margin-top:2%; margin-left:40px;") Absolute Move Z-Axis
+    <br>
+    form(name="SendCommand", method="post", action="")
+      button#btnSubmit(type="submit" name="unalarm" style="margin-top:2%; margin-left:20px;") Reset Alarm
+      button#btnSubmit(type="submit" name="home" style="margin-top:2%; margin-left:40px;") Home
+      button#btnSubmit(type="submit" name="update" style="margin-top:2%; margin-left:40px;") Update Status
+    <br>
+    form(name="SendCommand", method="post", action="")
+      button#btnSubmit(type="submit" name="WaterAll" style="margin-top:2%; margin-left:20px; width:500px;") Water All
+    <br>
+    form(name="input", action="../")
+      button#btnSubmit(type="submit" name="Menu" style="margin-top:2%; margin-left:20px; width:500px;") Return To Menu
+
+  if message
+      #label(style="top:12em; left:560px") #{message}
